@@ -31,6 +31,11 @@ namespace Points
         {
             return new Point(this.x, this.y);
         }
+        public void Deconstruct(out double a, out double b)
+        {
+            a = this.x;
+            b = this.y;
+        }
     }
     public class Line
     {
@@ -80,6 +85,10 @@ namespace Points
             Console.Write($"L2: {L2.ToString()}");
             Console.WriteLine($", Lenght = {L2.Length}");
 
+
+            //Deconstruction
+            (var x, var y) = A;
+            Console.WriteLine($"x = {x}, y = {y}");
             Console.ReadKey();
         }
     }
